@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <artifactId>parent-project</artifactId>
-    <groupId>org.baeldung</groupId>
+    <groupId>org.mentoring</groupId>
     <version>1.0-SNAPSHOT</version>
   </parent>
 
@@ -27,6 +27,17 @@
       <artifactId>junit</artifactId>
       <version>4.11</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>5.2.11.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mentoring</groupId>
+      <artifactId>event-service-api</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <scope>compile</scope>
     </dependency>
   </dependencies>
 

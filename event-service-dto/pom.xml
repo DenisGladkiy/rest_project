@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <artifactId>parent-project</artifactId>
-    <groupId>org.baeldung</groupId>
+    <groupId>org.mentoring</groupId>
     <version>1.0-SNAPSHOT</version>
   </parent>
 
