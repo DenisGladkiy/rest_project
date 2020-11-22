@@ -3,9 +3,11 @@ package org.mentoring.service;
 import org.mentoring.dao.EventDao;
 import org.mentoring.dto.Event;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class EventServiceImpl implements EventService {
 
     @Autowired
@@ -17,8 +19,8 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
-    public void updateEvent(Event event) {
-        eventDao.updateEvent(event);
+    public Event updateEvent(Event event) {
+        return eventDao.updateEvent(event);
     }
 
     @Override

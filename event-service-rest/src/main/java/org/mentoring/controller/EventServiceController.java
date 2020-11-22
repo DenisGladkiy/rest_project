@@ -3,6 +3,8 @@ package org.mentoring.controller;
 import org.mentoring.dto.Event;
 import org.mentoring.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@SpringBootApplication(scanBasePackages = "org.mentoring")
 @RestController
 @RequestMapping("/events")
 public class EventServiceController {
@@ -27,11 +30,11 @@ public class EventServiceController {
     }
 
     @PutMapping(value = "/{id}")
-    public void updateEvent(@RequestBody Event event) {
-        eventService.updateEvent(event);
+    public Event updateEvent(@RequestBody Event event) {
+        return eventService.updateEvent(event);
     }
 
-    @GetMapping(value = "/id/{id}")
+    @GetMapping(value = "/{id}")
     public Event getEvent(@PathVariable int id) {
         return eventService.getEvent(id);
     }
@@ -49,5 +52,9 @@ public class EventServiceController {
     @GetMapping("/title/{title}")
     public List<Event> getAllEventsByTitle(@PathVariable String title) {
         return eventService.getAllEventsByTitle(title);
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(EventServiceController.class, args);
     }
 }

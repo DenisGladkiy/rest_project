@@ -8,7 +8,7 @@ public interface EventDao {
 
     Event saveEvent(Event event);
 
-    void updateEvent(Event event);
+    Event updateEvent(Event event);
 
     Event findEvent(int id);
 
